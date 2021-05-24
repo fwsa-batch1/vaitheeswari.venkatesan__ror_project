@@ -1,0 +1,20 @@
+<section class="TodoSection">
+  <section class="TodoSection-Title">
+    <h2 class="TodoSection-TitleName"><%=section_title%></h2>
+    <h2 clss="TodoSection-Count"><%=todos.completed.count%>/<%=todos.count%></h2>
+  </section>
+  <ul>
+    <%todos.all.each do |todo|%>
+      <li class="TodoItem">
+        <input class="TodoItem-Text" type="checkbox">
+        <%=todo.todo_text%>
+        <%if (todo.due_date != Date.today)%>
+          <p class="TodoItem-Date"><%=todo.due_date.to_s(:short)%></p>
+        <%end%>
+        <a class="TodoItem-Delete" href="javascript:void(0)">
+          <img src="trashcan.svg" alt="trashcan">
+        </a>
+      </li>
+    <%end%>
+  </ul>
+</section>

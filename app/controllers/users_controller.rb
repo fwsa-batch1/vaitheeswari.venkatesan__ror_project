@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  # To show all the users
   def index
     render plain: User.all.map { |user| user.to_pleasant_user_string }.join("\n")
   end
 
+  # To create a new user
   def create
     name = params[:name]
     email = params[:email]
@@ -14,6 +16,7 @@ class UsersController < ApplicationController
     render plain: response_text
   end
 
+  # To check if there is a user with the given email and password
   def login
     email = params[:email]
     password = params[:password]

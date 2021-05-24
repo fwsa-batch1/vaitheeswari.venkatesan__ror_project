@@ -1,0 +1,111 @@
+body {
+  max-width: 460px;
+  margin: 0 auto;
+  margin-top: 32px;
+  font-family: sans-serif;
+}
+
+.Todo-Title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #453c52;
+  margin-bottom: 12px;
+}
+
+.TodoAdd {
+  height: 32px;
+  align-content: stretch;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.TodoAdd-Text {
+  padding: 6px 12px;
+  border: 1px solid #bfb8cc;
+  margin-right: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #726a7e;
+}
+
+.TodoAdd-Date {
+  padding: 6px;
+  border: 1px solid #bfb8cc;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #726a7e;
+}
+
+.TodoAdd-Button {
+  background: #48bb78;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+}
+
+.TodoSection {
+  margin-bottom: 20px;
+}
+
+.TodoSection-Title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #453c52;
+}
+
+.TodoSection-TitleName {
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 8px;
+  line-height: 1.4;
+}
+
+.TodoSection-Count {
+  font-size: 12px;
+}
+
+.TodoItem {
+  display: flex;
+  padding: 2px 8px;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 14px;
+  margin-left: 8px;
+  color: #453c52;
+}
+
+.TodoItem-Text {
+  width: 16px;
+  height: 16px;
+}
+
+.TodoItem-Status {
+  margin-left: 10px;
+  color: darkred;
+  font-size: 12px;
+  display: inline;
+}
+
+.TodoItem-Date {
+  margin-left: 10px;
+  color: #726a7e;
+  font-size: 12px;
+}
+
+.TodoItem-Delete {
+  visibility: hidden;
+  margin-left: 8px;
+}
+
+.TodoItem-Delete > img {
+  width: 16px;
+}
+
+.TodoItem:hover .TodoItem-Delete {
+  visibility: visible;
+}
