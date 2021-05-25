@@ -106,6 +106,10 @@ body {
   width: 16px;
 }
 
+.TodoItem:hover{
+  background-color: rgb(235, 235, 217);
+}
+
 .TodoItem:hover .TodoItem-Delete {
   visibility: visible;
 }
