@@ -6,14 +6,22 @@
   <ul>
     <%todos.all.each do |todo|%>
       <li class="TodoItem">
-        <input class="TodoItem-Text" type="checkbox">
-        <%=todo.todo_text%>
-        <%if (todo.due_date != Date.today)%>
-          <p class="TodoItem-Date"><%=todo.due_date.to_s(:short)%></p>
-        <%end%>
-        <a class="TodoItem-Delete" href="javascript:void(0)">
-          <img src="trashcan.svg" alt="trashcan">
-        </a>
+        <label class="TodoItem-Container">
+          <form>
+            <%if (todo.completed)%>
+              <input class="TodoItem-Checkbox" type="checkbox" value="1" checked/>
+            <%else%>
+              <input class="TodoItem-Checkbox" type="checkbox" value="2" />
+            <%end%>
+          </form>
+          <p class='<%= todo.completed ? "TodoItem-Text-Completed" : ""%>'><%= todo.todo_text%></p>
+          <%if (todo.due_date != Date.today)%>
+            <p class="TodoItem-Date"><%=todo.due_date.to_s(:short)%></p>
+          <%end%>
+          <a class="TodoItem-Delete" href="javascript:void(0)">
+            <img src="trashcan.svg" alt="trashcan">
+          </a>
+        </label>
       </li>
     <%end%>
   </ul>

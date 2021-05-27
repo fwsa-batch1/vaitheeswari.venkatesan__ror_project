@@ -19,7 +19,7 @@ class Todo < ActiveRecord::Base
     all.where(completed: true)
   end
 
-  def self.due_today?
-    due_date == Date.today
+  def self.not_completed
+    all.where(completed: false)
   end
 end

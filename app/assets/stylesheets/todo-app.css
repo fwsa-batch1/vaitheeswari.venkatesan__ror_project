@@ -70,18 +70,25 @@ body {
 }
 
 .TodoItem {
-  display: flex;
-  padding: 2px 8px;
-  align-items: center;
   margin-bottom: 6px;
   font-size: 14px;
   margin-left: 8px;
   color: #453c52;
 }
 
-.TodoItem-Text {
+.TodoItem-Container{
+  display: inline-flex;
+  padding: 2px 8px;
+  align-items :center;
+}
+
+.TodoItem-checkbox {
   width: 16px;
   height: 16px;
+}
+
+.TodoItem-Text-Completed{
+  text-decoration: line-through;
 }
 
 .TodoItem-Date {
@@ -98,6 +105,12 @@ body {
 
 .TodoItem-Delete > img {
   width: 16px;
+}
+
+.TodoItem-Container:hover {
+  background-color: rgb(235, 235, 217);
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .TodoItem:hover .TodoItem-Delete {

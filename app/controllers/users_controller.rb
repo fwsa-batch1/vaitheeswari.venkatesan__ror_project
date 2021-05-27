@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def login
     email = params[:email]
     password = params[:password]
-    user = User.find { |user| user.email == email }
+    user = User.find_by(email: email)
     if !(user == nil)
       response_text = (user[:password].eql? password) ? "true" : "false"
     else
