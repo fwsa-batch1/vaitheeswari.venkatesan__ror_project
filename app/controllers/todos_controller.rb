@@ -12,8 +12,7 @@ class TodosController < ApplicationController
     todo_text = params[:todo_text]
     due_date = DateTime.parse(params[:due_date])
     new_todo = Todo.create!(todo_text: todo_text, due_date: due_date, completed: false)
-    response_text = "New todo is created with id #{new_todo.id}"
-    render plain: response_text
+    redirect_to todos_path
   end
 
   # To change the completed status of a user
@@ -23,7 +22,7 @@ class TodosController < ApplicationController
     todo = Todo.find(id)
     todo.completed = completed
     todo.save
-    render plain: "Updated Todo  #{todo.id} with completed status : #{todo.completed}"
+    redirect_to todos_path
   end
 
   # To show a particular todo using id

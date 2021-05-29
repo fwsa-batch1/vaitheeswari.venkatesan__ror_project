@@ -1,10 +1,10 @@
 <article>
   <h1 class="Todo-Title">My To-do List</h1>
-  <section class="TodoAdd">
-    <input class="TodoAdd-Text" type=text placeholder="What’s next?">
-    <input class="TodoAdd-Date" type="date">
-    <input class="TodoAdd-Button" type="button" value="Add">
-  </section>
+  <form class="TodoAdd" action="/todos" method="POST">
+    <input class="TodoAdd-Text" type=text placeholder="What’s next?" name="todo_text">
+    <input class="TodoAdd-Date" type="date" name="due_date">
+    <input class="TodoAdd-Button" type="submit" value="Add">
+  </form>
   <%=render partial:"todo-section", locals: {section_title: "Overdue",todos:Todo.overdue.not_completed }%>
   <%=render partial:"todo-section", locals: {section_title: "Due Today",todos:Todo.due_today }%>
   <%=render partial:"todo-section", locals: {section_title: "Due Later",todos:Todo.due_later }%>
