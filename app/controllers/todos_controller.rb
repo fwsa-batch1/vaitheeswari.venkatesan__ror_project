@@ -21,7 +21,7 @@ class TodosController < ApplicationController
     completed = params[:completed]
     todo = Todo.find(id)
     todo.completed = completed
-    todo.save
+    todo.save!
     redirect_to todos_path
   end
 
@@ -29,5 +29,12 @@ class TodosController < ApplicationController
   def show
     id = params[:id]
     render plain: Todo.find(id).to_pleasant_string
+  end
+
+  def destroy
+    id = params[:id]
+    todo = Todo.find(id)
+    todo.destroy
+    redirect_to todos_path
   end
 end
