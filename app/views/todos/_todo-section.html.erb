@@ -15,7 +15,7 @@
             />
           <%end%>
           <p class='<%= todo.completed ? "TodoItem-Text-Completed" : ""%>'><%= todo.todo_text%></p>
-          <%if (todo.due_date != Date.today)%>
+          <%if (show_due_date)%>
             <p class="TodoItem-Date"><%=todo.due_date.to_s(:short)%></p>
           <%end%>
           <a class="TodoItem-Delete" href="javascript:void(0)">

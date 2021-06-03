@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  def new
+    render "users/new"
+  end
 
   # To show all the users
   def index
@@ -8,12 +10,12 @@ class UsersController < ApplicationController
 
   # To create a new user
   def create
-    name = params[:name]
+    first_name = params[:first_name]
+    last_name = params[:last_name]
     email = params[:email]
     password = params[:password]
-    new_user = User.create!(name: name, email: email, password: password)
-    response_text = "New User is created with id #{new_user.id}"
-    render plain: response_text
+    new_user = User.create!(first_name: first_name, last_name: last_name, email: email, password: password)
+    redirect_to "/"
   end
 
   # To check if there is a user with the given email and password
