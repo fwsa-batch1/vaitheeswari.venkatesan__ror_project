@@ -5,7 +5,7 @@
     <%=date_field_tag "due_date",nil,class:"TodoAdd-Date"%>
     <%=submit_tag nil,class:"TodoAdd-Button",value:"Add"%>
   <%end%>
-  <%=render partial:"todo-section", locals: {section_title: "Overdue",todos:Todo.overdue.not_completed,show_due_date:true }%>
-  <%=render partial:"todo-section", locals: {section_title: "Due Today",todos:Todo.due_today,show_due_date: false }%>
-  <%=render partial:"todo-section", locals: {section_title: "Due Later",todos:Todo.due_later,show_due_date: true }%>
+  <%=render partial:"todo-section", locals: {section_title: "Overdue",todos: @todos.overdue.not_completed,show_due_date:true }%>
+  <%=render partial:"todo-section", locals: {section_title: "Due Today",todos: @todos.due_today,show_due_date: false }%>
+  <%=render partial:"todo-section", locals: {section_title: "Due Later",todos: @todos.due_later,show_due_date: true }%>
 </article>

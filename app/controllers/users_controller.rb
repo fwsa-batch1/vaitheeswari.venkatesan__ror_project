@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  skip_before_action :ensure_user_logged_in
+
   def new
-    render "users/new"
+    render "new"
   end
 
   # To show all the users
@@ -16,18 +18,5 @@ class UsersController < ApplicationController
     password = params[:password]
     new_user = User.create!(first_name: first_name, last_name: last_name, email: email, password: password)
     redirect_to "/"
-  end
-
-  # To check if there is a user with the given email and password
-  def login
-    email = params[:email]
-    password = params[:password]
-    user = User.find_by(email: email)
-    if !(user == nil)
-      response_text = (user[:password].eql? password) ? "true" : "false"
-    else
-      response_text = "false"
-    end
-    render plain: response_text
   end
 end
