@@ -1,24 +1,19 @@
-# README
+# TODO-MANAGER APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Todo Manager application is  a fully functioning SaaS application that can be used by any number of users on the web.
 
-Things you may want to cover:
+## The features present in the application are:
 
-* Ruby version
+* Users will be able to sign-up, sign-in, and sign-out.
 
-* System dependencies
+* A user can see and manage only their own todos and nobody else's.
 
-* Configuration
+* A user can add a new todo.
 
-* Database creation
+* A user can mark a todo completed or not .
 
-* Database initialization
+* A user can delete  todos.
 
-* How to run the test suite
+[HEROKU LINK](https://vaithi-todo-manager.herokuapp.com)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](app/assets/images/todo_manager.png)
