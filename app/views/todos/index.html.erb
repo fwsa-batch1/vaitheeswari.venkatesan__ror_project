@@ -1,7 +1,7 @@
 <article>
   <h1 class="Todo-Title">My To-do List</h1>
   <%=form_with(url:"/todos" ,method:"post",class:"TodoAdd") do%>
-    <%=text_field_tag "todo_text",nil,class:"TodoAdd-Text",placeholder:"What’s next?"%>
+    <%=text_field_tag "todo_text",nil,class:"TodoAdd-Text",placeholder:"What’s next?",autofocus: true %>
     <%=date_field_tag "due_date",nil,class:"TodoAdd-Date"%>
     <%=submit_tag nil,class:"TodoAdd-Button",value:"Add"%>
   <%end%>
